@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Container for employee boxes */
+        .employee-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Box styles */
+        .employee-box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin: 40px;
+            width: 200px; /* Adjust width as needed */
+            text-align: center;
+        }
+
+        .employee-img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .employee-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .employee-info {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Employee Details</h1>
+    </header>
+
+    <!-- Body -->
+    <div class="employee-container">
+        <!-- Employee Boxes -->
+        <!-- Box 1 -->
+        {% for d in data %}
+        <div class="employee-box">
+            <img class="employee-img" src="{{d.photo.url}}" alt="Employee Image">
+            <div class="employee-info">
+                <span class="employee-name">{{d.name}}</span><br>
+                <span class="employee-name">{{d.company}}</span><br>
+                <span class="employee-designation">{{d.designation}}</span><br>
+                <span class="employee-joining-date">Joined: {{d.joined_date}}</span>,<br>
+                <span class="employee-joining-date">{{d.country}}</span>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Box 2 -->
+        <!-- <div class="employee-box">
+            <img class="employee-img" src="employee_image.jpg" alt="Employee Image">
+            <div class="employee-info">
+                <span class="employee-name">John Doe</span><br>
+                <span class="employee-designation">Software Engineer</span><br>
+                <span class="employee-joining-date">Joined: January 1, 2022</span>
+            </div>
+        </div> -->
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
